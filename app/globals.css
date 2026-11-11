@@ -1,26 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --font-poppins: "Poppins", ui-sans-serif, system-ui, sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-poppins);
+  --font-heading: var(--font-poppins);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
+  font-family: var(--font-poppins);
+}
+
+.admin-mesh-bg {
+  background-color: #f5f8f6;
+  background-image:
+    radial-gradient(ellipse 90% 70% at 8% 0%, #cfead9 0%, transparent 58%),
+    radial-gradient(ellipse 80% 60% at 95% 8%, #e4f5eb 0%, transparent 52%),
+    radial-gradient(ellipse 70% 55% at 15% 100%, #d5ebe0 0%, transparent 50%),
+    radial-gradient(ellipse 55% 45% at 88% 92%, #eef3f0 0%, transparent 48%);
+}
+
+.admin-table thead {
+  background-color: #eef5f1;
+  border-bottom: 1px solid #e2e9e4;
+  color: #5c6b61;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.admin-table tbody tr.admin-data-row {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e8eee9;
+  transition: background-color 150ms ease;
+}
+
+.admin-table tbody tr.admin-data-row:nth-child(even of .admin-data-row) {
+  background-color: #f7faf8;
+}
+
+.admin-table tbody tr.admin-data-row:hover {
+  background-color: #eaf3ed;
+}
+
+.admin-table tbody tr.admin-data-row:last-child {
+  border-bottom: 0;
 }
